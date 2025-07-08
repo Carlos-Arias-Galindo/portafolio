@@ -2,75 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="Portafolio de Carlos Galindo: micrositios interactivos, arte generativo y narrativa digital">
-<meta name="author" content="Carlos Galindo">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Carlos Galindo | Portafolio de micrositios</title>
   <link rel="icon" href="favicon.png">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #f1f1f1;
-      color: #222;
-      scroll-behavior: smooth;
-    }
-    section {
-      min-height: 100vh;
-      padding: 4em 2em;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      position: relative;
-    }
-    h1, h2 {
-      margin-bottom: 1em;
-    }
-    .part-section {
-      background: #fff;
-      margin: 0 auto;
-      max-width: 700px;
-      border-radius: 15px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      padding: 2em;
-    }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 1s ease-out, transform 1s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    iframe {
-      width: 100%;
-      height: 400px;
-      border: none;
-      margin-top: 1em;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #999;
-      padding: 2em;
-    }
-    audio {
-      position: fixed;
-      bottom: 10px;
-      left: 10px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <section style="background-color:#111; color:#fff; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height: 100vh;">
+  <section class="intro">
     <div>
-      <h1 style="font-size:3em; margin-bottom:0.5em;">Carlos Galindo</h1>
-      <p style="font-size:1.3em;">Portafolio de micrositios narrativos, arte interactivo y comunicación digital</p>
+      <h1>Carlos Galindo</h1>
+      <p>Portafolio de micrositios narrativos, arte interactivo y comunicación digital</p>
     </div>
   </section>
 
@@ -86,8 +28,23 @@
     <div class="part-section fade-in">
       <h2>Sketches interactivos en p5.js</h2>
       <p>Exploraciones visuales y conceptuales con código creativo.</p>
-    <iframe src="https://editor.p5js.org/bioliteraturas/full/mp_62PaaI"></iframe>
+      <iframe src="https://editor.p5js.org/bioliteraturas/full/mp_62PaaI"></iframe>
       <iframe src="https://editor.p5js.org/embed/YOUR-SKETCH-ID-2"></iframe>
+    </div>
+  </section>
+
+  <section>
+    <div class="part-section fade-in">
+      <h2>Servicios y paquetes</h2>
+      <p>Trabajo con proyectos culturales, artísticos y educativos que quieren comunicar de forma visual, sensible y accesible.</p>
+      <ul class="service-list">
+        <li><strong>🌀 Micrositio narrativo:</strong> Ideal para exhibiciones, textos, performance o archivo poético. Desde $3,500 MXN.</li>
+        <li><strong>🧬 Arte interactivo con p5.js:</strong> Visualizaciones generativas o narrativas programadas. Desde $1,200 MXN.</li>
+        <li><strong>🌐 Web informativa cultural:</strong> Sitio tipo cartelera o presentación de proyecto. Desde $2,800 MXN.</li>
+        <li><strong>📂 Carga en GitHub Pages:</strong> Publicación gratuita sin costo de hosting.</li>
+      </ul>
+      <p class="note">También puedo ayudarte a pensar el contenido, guion visual o estrategias narrativas digitales.</p>
+      <a href="mailto:carlos@ejemplo.com" class="btn">Solicitar cotización</a>
     </div>
   </section>
 
@@ -108,26 +65,6 @@
     Tu navegador no soporta audio HTML5.
   </audio>
 
-  <script>
-    const faders = document.querySelectorAll('.fade-in');
-
-    const appearOptions = {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const appearOnScroll = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      });
-    }, appearOptions);
-
-    faders.forEach(fader => {
-      appearOnScroll.observe(fader);
-    });
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
